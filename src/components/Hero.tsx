@@ -2,8 +2,19 @@ import RFQCard from "./RFQCard"
 import CustomerInfoCard from "./CustomerInfoCard"
 import CustomerRequestCard from "./CustomerRequestCard"
 import ItemsCard from "./ItemsCard"
+import { useState } from "react"
+import type { IUser } from "../types"
 
 function Hero() {
+    const [userInfo, setUserInfo] = useState<IUser>({
+        address: "",
+        company: "",
+        deadliine: "",
+        email: "",
+        name: "",
+        number: "",
+        pin: ""
+    })
 
     return (
         <div className="min-h-screen bg-zinc-900 p-4">
@@ -18,11 +29,14 @@ function Hero() {
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div className="lg:col-span-2 space-y-6">
-                        <CustomerInfoCard />
+                        <CustomerInfoCard
+                            user={userInfo}
+                            setUser={setUserInfo}
+                        />
                         <CustomerRequestCard />
                         <ItemsCard />
                     </div>
-                    <RFQCard />
+                    <RFQCard user={userInfo} />
                 </div>
             </div>
         </div>

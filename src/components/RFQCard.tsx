@@ -1,6 +1,20 @@
 import { LucideCopy, LucideSend } from 'lucide-react'
+import type { IUser } from '../types'
+import type React from 'react'
 
-function RFQCard() {
+interface Iprop {
+    user: IUser,
+    // setUser: React.Dispatch<React.SetStateAction<IUser>>
+
+}
+
+function RFQCard({ user }: Iprop) {
+    // function handleUserInfo(e: InputEvent) {
+    //     setUser({
+    //         ...user,
+
+    //     })
+    // }
     return (
         <div className="lg:col-span-1">
             <div
@@ -31,19 +45,20 @@ function RFQCard() {
                             <strong>Date:</strong> 08/08/2025
                         </div>
                         <div>
-                            <strong>Customer Name:</strong> Not Provided
+                            <strong>Customer Name:</strong>
+                            {user.name ? user.name : "Not Provided"}
                         </div>
                         <div>
-                            <strong>Company:</strong> Not Provided
+                            <strong>Company:</strong> {user.company ? user.company : "Not Provided"}
                         </div>
                         <div>
-                            <strong>Email:</strong> Not Provided
+                            <strong>Email:</strong> {user.email ? user.email : "Not Provided"}
                         </div>
                         <div>
-                            <strong>Phone:</strong> Not Provided
+                            <strong>Phone:</strong> {user.number ? user.number : "Not Provided"}
                         </div>
                         <div>
-                            <strong>Zip Code:</strong> Not Provided
+                            <strong>Zip Code:</strong> {user.pin ? user.pin : "Not Provided"}
                         </div>
                     </div>
                     <div
@@ -54,11 +69,11 @@ function RFQCard() {
                     />
                     <div className="text-sm">
                         <div className="font-medium mb-2">Shipping Address:</div>
-                        <div className="text-gray-600">Not Provided</div>
+                        <div className="text-gray-600">{user.address ? user.address : "Not Provided"}</div>
                     </div>
                     <div className="text-sm">
                         <div className="font-medium mb-2">Delivery Deadline:</div>
-                        <div className="text-gray-600">Not Specified</div>
+                        <div className="text-gray-600">{user.deadliine ? user.deadliine : "Not Specified"}</div>
                     </div>
                     <div
                         data-orientation="horizontal"
