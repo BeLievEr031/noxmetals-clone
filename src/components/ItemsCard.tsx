@@ -52,7 +52,9 @@ function ItemsCard({ items, setItems }: IProp) {
                     items.map(function (item, index) {
                         return <Item item={item} idx={index} setItems={setItems} />
                     })
-                    : "No item found."
+                    : <p className='text-center py-8'>
+                        No line items yet. Parse a request or add items manually.
+                    </p>
             }
         </div>
     )
