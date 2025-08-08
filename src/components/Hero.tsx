@@ -3,7 +3,7 @@ import CustomerInfoCard from "./CustomerInfoCard"
 import CustomerRequestCard from "./CustomerRequestCard"
 import ItemsCard from "./ItemsCard"
 import { useState } from "react"
-import type { IUser } from "../types"
+import type { IItem, IUser } from "../types"
 
 function Hero() {
     const [userInfo, setUserInfo] = useState<IUser>({
@@ -16,6 +16,7 @@ function Hero() {
         pin: ""
     })
 
+    const [itemsArr, setItemsArr] = useState<IItem[]>([])
     return (
         <div className="min-h-screen bg-zinc-900 p-4">
             <div className="max-w-7xl mx-auto space-y-6">
@@ -34,9 +35,9 @@ function Hero() {
                             setUser={setUserInfo}
                         />
                         <CustomerRequestCard />
-                        <ItemsCard />
+                        <ItemsCard items={itemsArr} setItems={setItemsArr} />
                     </div>
-                    <RFQCard user={userInfo} />
+                    <RFQCard user={userInfo} items={itemsArr} />
                 </div>
             </div>
         </div>

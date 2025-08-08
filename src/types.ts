@@ -7,3 +7,14 @@ export interface IUser {
     address: string;
     deadliine: string;
 }
+
+export interface IItem {
+    material: string;
+    length: string;
+    width: string;
+    height: string;
+    qnt: string;
+    notes: string;
+    required: boolean;
+
+}
