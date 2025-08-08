@@ -1,3 +1,4 @@
+import Footer from "./components/Footer"
 import Hero from "./components/Hero"
 import TopBar from "./components/TopBar"
 
@@ -6,6 +7,7 @@ function App() {
     <div className='bg-zinc-900'>
       <TopBar />
       <Hero />
+      <Footer />
     </div>
   )
 }
