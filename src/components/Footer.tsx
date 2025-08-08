@@ -13,7 +13,7 @@ function Footer() {
                     </div>
                     <div className="col-span-1 sm:col-span-2">
                         <h3 className="text-base font-semibold">Send manual quotes to</h3>
-                        <p className="text-sm mt-2">📥 zane@noxmetals.co</p>
+                        <p className="text-sm mt-2">📥 zane@noxmetals.store</p>
                     </div>
                 </div>
                 <div
